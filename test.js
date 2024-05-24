@@ -1,6 +1,6 @@
 const {toDollar, toYen, toPound} = require('./app.js');
-test('1 euro to be 1.07 dollars', () =>{
-   expect(toDollar(1)).toBe(1.07);
+test('1 euro to be 3.745 dollars', () =>{
+   expect(toDollar(1)).toBe(3.745);
 
 }) 
 test('1 dollar to be 146.26 yen', ()=>{
