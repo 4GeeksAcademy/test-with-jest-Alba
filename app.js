@@ -1,29 +1,28 @@
 
 let oneEuroIs = { "JPY": 156.5, "USD": 1.07, "GBP": 0.87, };
 
-
-const toDollar = (euros) => {
-   let dollar = euros * 1.07;
-   dollar = dollar * 3.5;
+const fromEuroToDollar = (euros) => {
+   let dollar = euros * oneEuroIs.USD;
+   
    console.log(dollar);
    return dollar 
 }
 
-const toYen = (dollar) => {
-   let euro = dollar / 1.07;
-   let yen = euro * 156.5;
-   console.log(yen.toFixed(2));
-   return Number( yen.toFixed(2))
+const fromDollarToYen = (dollar) => {
+   let euro = dollar / oneEuroIs.USD;
+   let yen = euro * oneEuroIs.JPY;
+   console.log(yen);
+   return parseFloat(yen.toFixed(2))
 }
 
 
-const toPound = (yen) => {
-   let euro = yen / 156.5;
-   let pound = euro * 0.87;
-   console.log(pound.toFixed(2));
-   return Number (pound.toFixed(2))
+const fromYenToPound = (yen) => {
+   let euro = yen / oneEuroIs.JPY;
+   let pound = euro * oneEuroIs.GBP;
+   console.log(pound);
+   return parseFloat(pound.toFixed(3))
 }
-toDollar();
-module.exports = {toDollar, toYen, toPound}
+
+module.exports = {fromEuroToDollar, fromDollarToYen, fromYenToPound}
 
 
